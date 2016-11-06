@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <laudat>
+        <lauta>
+            <leveys>8</leveys>
+            <pituus>8</pituus>
+        </lauta>
+    </laudat>
+    <nappulat>
+        <nappula>
+            <nimi>HyppaavaLahetti</nimi>
+            <notaatioMerkki>L</notaatioMerkki>
+            <valkoinenMerkki>L</valkoinenMerkki>
+            <mustaMerkki>l</mustaMerkki>
+            <liikkumistyypit>
+                <liikkumistyyppi>LahettiHyppy</liikkumistyyppi>
+            </liikkumistyypit>
+        </nappula>
+        <nappula>
+            <nimi>OutoKuningatar</nimi>
+            <notaatioMerkki>D</notaatioMerkki>
+            <valkoinenMerkki>D</valkoinenMerkki>
+            <mustaMerkki>d</mustaMerkki>
+            <liikkumistyypit>
+                <liikkumistyyppi>LahettiHyppy</liikkumistyyppi>
+                <liikkumistyyppi>Torni</liikkumistyyppi>
+            </liikkumistyypit>
+        </nappula>
+        <nappula>
+            <nimi>OutoKuningatar2</nimi>
+            <notaatioMerkki>Q</notaatioMerkki>
+            <valkoinenMerkki>Q</valkoinenMerkki>
+            <mustaMerkki>q</mustaMerkki>
+            <liikkumistyypit>
+                <liikkumistyyppi>Lahetti</liikkumistyyppi>
+                <liikkumistyyppi>TorniHyppy</liikkumistyyppi>
+            </liikkumistyypit>
+        </nappula>
+    </nappulat>
+    <aloittaja>VALKOINEN</aloittaja>
+    <alkupaikat>
+        <nappulanPaikka>
+            <nappulanNimi>HyppaavaLahetti</nappulanNimi>
+            <nappulanPuoli>VALKOINEN</nappulanPuoli>
+            <xkoord>0</xkoord>
+            <ykoord>0</ykoord>
+        </nappulanPaikka>
+        <nappulanPaikka>
+            <nappulanNimi>OutoKuningatar</nappulanNimi>
+            <nappulanPuoli>MUSTA</nappulanPuoli>
+            <xkoord>0</xkoord>
+            <ykoord>7</ykoord>
+        </nappulanPaikka>
+        <nappulanPaikka>
+            <nappulanNimi>OutoKuningatar2</nappulanNimi>
+            <nappulanPuoli>MUSTA</nappulanPuoli>
+            <xkoord>1</xkoord>
+            <ykoord>7</ykoord>
+        </nappulanPaikka>
+    </alkupaikat>
+</root>

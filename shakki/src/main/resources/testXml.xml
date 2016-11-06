@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <laudat>
+        <lauta>
+            <leveys>9</leveys>
+            <pituus>9</pituus>
+        </lauta>
+    </laudat>
+    <nappulat>
+        <nappula>
+            <nimi>HyppaavaTorni</nimi>
+            <notaatioMerkki>T</notaatioMerkki>
+            <valkoinenMerkki>T</valkoinenMerkki>
+            <mustaMerkki>t</mustaMerkki>
+            <liikkumistyypit>
+                <liikkumistyyppi>TorniHyppy</liikkumistyyppi>
+            </liikkumistyypit>
+        </nappula>
+    </nappulat>
+    <aloittaja>VALKOINEN</aloittaja>
+    <alkupaikat>
+        <nappulanPaikka>
+            <nappulanNimi>HyppaavaTorni</nappulanNimi>
+            <nappulanPuoli>VALKOINEN</nappulanPuoli>
+            <xkoord>0</xkoord>
+            <ykoord>0</ykoord>
+        </nappulanPaikka>
+        <nappulanPaikka>
+            <nappulanNimi>HyppaavaTorni</nappulanNimi>
+            <nappulanPuoli>MUSTA</nappulanPuoli>
+            <xkoord>0</xkoord>
+            <ykoord>7</ykoord>
+        </nappulanPaikka>
+    </alkupaikat>
+</root>
