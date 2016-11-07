@@ -6,3 +6,4 @@ Viikolla on valittu työn aihe ja suunniteltu mitä algoritmeja käytetään.  H
 
 Opin mitä lähestymistapoja shakkitekoälyihin on, ja miten quiescence search toimii.
 
+Seuraavaksi toteutan alkukantaisen solmun evaluoinnin ja hiljaisuusarvioinnin, teen hakualgoritmit loppuun ja muokkaan shakkiohjelmaa niin että sitä voi pelata tietokonetta vastaan/tietokone voi pelata itseään vastaan. Jälkimmäisen auttaa bugien korjauksessa.
