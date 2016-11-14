@@ -78,16 +78,27 @@ public class SotilasLiikkuminen {
     }
 
     private static boolean captureMove(int[] mista, int[] minne, Lauta lauta, Nappula.Puoli puoli, int[] enPassant) {
-        if (enPassant != null) {
-            if (Arrays.equals(minne, enPassant)) {
-//                Liikkuminen.enPassant(lauta.getNappula(mista), minne, lauta);
-                return true;
-            }
+//        if (enPassant != null) {
+//            if (Arrays.equals(minne, enPassant)) {
+////                Liikkuminen.enPassant(lauta.getNappula(mista), minne, lauta);
+//                if(Math.abs(mista[0] - minne[0])==1) {
+//                    if(puoli == Nappula.Puoli.VALKOINEN) {
+//                        if((mista[1] - minne[1])==-1) {
+//                            return true;
+//                        }
+//                    } else {
+//                        if((mista[1] - minne[1])==1) {
+//                            return true;
+//                        }
+//                    }
+//                }
+//                return false;
+//            }
 //            else {
 //                System.out.println(Arrays.toString(minne));
 //                System.out.println(Arrays.toString(enPassant));
 //            }
-        }
+//        }
         if (lauta.getNappula(minne).getPuoli() == puoli) {
             return false;
         }

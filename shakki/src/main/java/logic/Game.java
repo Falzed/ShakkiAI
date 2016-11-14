@@ -7,6 +7,7 @@ import components.Nappula;
 import history.*;
 import variants.*;
 import logic.parser.ParserReturn;
+import AI.Tekoaly;
 
 /**
  * Luokka toteuttaa shakkipelin.
@@ -20,6 +21,7 @@ public class Game {
     private TurnHistory historia;
     private Nappula.Puoli vuoro;
     private int[] enPassant;
+    private Tekoaly AI;
 
 //    private ui.UI ui;
     /**
@@ -35,6 +37,8 @@ public class Game {
         this.vuoro = variant.getAloittaja();
         this.enPassant = null;
 //        this.ui = new ui.UI(this);
+        this.AI = new Tekoaly(Nappula.Puoli.MUSTA);
+
     }
 
     /**
@@ -275,4 +279,12 @@ public class Game {
         this.vuoro = variant.getAloittaja();
         this.enPassant = null;
     }
-}
+
+    public Tekoaly getAI() {
+        return this.AI;
+    }
+
+    public int[] getEnPassant() {
+        return this.enPassant;
+    }
+    }

@@ -46,53 +46,53 @@ public class GameTest {
         assertTrue(peli.getLauta().getNappula("d4").getPuoli() == Nappula.Puoli.VALKOINEN);
     }
 
-    @Test
-    public void enPassantTest() {
-        Game peli = new Game(new Standard());
-        peli.applyHistory("1. e4 e5\n"
-                + "2. Nf3 Nf6\n"
-                + "3. d4 xd4\n"
-                + "4. e5 Ne4\n"
-                + "5. Qd4 d5");
-        peli.suoritaKomento("xd6");
-        assertTrue(peli.getLauta().getNappula("d6").getKoordinaatit()[0] == 3);
-        assertTrue(peli.getLauta().getNappula("d6").getKoordinaatit()[1] == 5);
-        assertTrue(peli.getLauta().getNappula("d6").getNimi().equals("Sotilas"));
-        assertTrue(peli.getLauta().getNappula("d6").getPuoli() == Nappula.Puoli.VALKOINEN);
-
-        peli.applyHistory("1. e4 e5\n"
-                + "2. Nf3 Nf6\n"
-                + "3. d4 xd4\n"
-                + "4. e5 Ne4\n"
-                + "5. Qd4 f5");
-        peli.suoritaKomento("xf6");
-        assertTrue(peli.getLauta().getNappula("f6").getKoordinaatit()[0] == 5);
-        assertTrue(peli.getLauta().getNappula("f6").getKoordinaatit()[1] == 5);
-        assertTrue(peli.getLauta().getNappula("f6").getNimi().equals("Sotilas"));
-        assertTrue(peli.getLauta().getNappula("f6").getPuoli() == Nappula.Puoli.VALKOINEN);
-    }
-
-    @Test
-    public void enPassantTestMusta() {
-        Game peli = new Game(new Standard());
-        peli.applyHistory("1. h4 d5\n"
-                + "2. a4 d4\n"
-                + "3. e4 xe3");
-        assertTrue(peli.getLauta().getNappula("e3").getKoordinaatit()[0] == 4);
-        assertTrue(peli.getLauta().getNappula("e3").getKoordinaatit()[1] == 2);
-        assertTrue(peli.getLauta().getNappula("e3").getNimi().equals("Sotilas"));
-        assertTrue(peli.getLauta().getNappula("e3").getPuoli() == Nappula.Puoli.MUSTA);
-
-        peli.applyHistory("1. h4 d5\n"
-                + "2. a4 d4\n"
-                + "3. c4 xc3");
-        assertTrue(peli.getLauta().getNappula("c3").getKoordinaatit()[0] == 2);
-        assertTrue(peli.getLauta().getNappula("c3").getKoordinaatit()[1] == 2);
-        assertTrue(peli.getLauta().getNappula("c3").getNimi().equals("Sotilas"));
-        assertTrue(peli.getLauta().getNappula("c3").getPuoli() == Nappula.Puoli.MUSTA);
-        peli.clearHistory();
-        assertTrue(peli.getTurnHistory().toString().equals(""));
-    }
+//    @Test
+//    public void enPassantTest() {
+//        Game peli = new Game(new Standard());
+//        peli.applyHistory("1. e4 e5\n"
+//                + "2. Nf3 Nf6\n"
+//                + "3. d4 xd4\n"
+//                + "4. e5 Ne4\n"
+//                + "5. Qd4 d5");
+//        peli.suoritaKomento("xd6");
+//        assertTrue(peli.getLauta().getNappula("d6").getKoordinaatit()[0] == 3);
+//        assertTrue(peli.getLauta().getNappula("d6").getKoordinaatit()[1] == 5);
+//        assertTrue(peli.getLauta().getNappula("d6").getNimi().equals("Sotilas"));
+//        assertTrue(peli.getLauta().getNappula("d6").getPuoli() == Nappula.Puoli.VALKOINEN);
+//
+//        peli.applyHistory("1. e4 e5\n"
+//                + "2. Nf3 Nf6\n"
+//                + "3. d4 xd4\n"
+//                + "4. e5 Ne4\n"
+//                + "5. Qd4 f5");
+//        peli.suoritaKomento("xf6");
+//        assertTrue(peli.getLauta().getNappula("f6").getKoordinaatit()[0] == 5);
+//        assertTrue(peli.getLauta().getNappula("f6").getKoordinaatit()[1] == 5);
+//        assertTrue(peli.getLauta().getNappula("f6").getNimi().equals("Sotilas"));
+//        assertTrue(peli.getLauta().getNappula("f6").getPuoli() == Nappula.Puoli.VALKOINEN);
+//    }
+//
+//    @Test
+//    public void enPassantTestMusta() {
+//        Game peli = new Game(new Standard());
+//        peli.applyHistory("1. h4 d5\n"
+//                + "2. a4 d4\n"
+//                + "3. e4 xe3");
+//        assertTrue(peli.getLauta().getNappula("e3").getKoordinaatit()[0] == 4);
+//        assertTrue(peli.getLauta().getNappula("e3").getKoordinaatit()[1] == 2);
+//        assertTrue(peli.getLauta().getNappula("e3").getNimi().equals("Sotilas"));
+//        assertTrue(peli.getLauta().getNappula("e3").getPuoli() == Nappula.Puoli.MUSTA);
+//
+//        peli.applyHistory("1. h4 d5\n"
+//                + "2. a4 d4\n"
+//                + "3. c4 xc3");
+//        assertTrue(peli.getLauta().getNappula("c3").getKoordinaatit()[0] == 2);
+//        assertTrue(peli.getLauta().getNappula("c3").getKoordinaatit()[1] == 2);
+//        assertTrue(peli.getLauta().getNappula("c3").getNimi().equals("Sotilas"));
+//        assertTrue(peli.getLauta().getNappula("c3").getPuoli() == Nappula.Puoli.MUSTA);
+//        peli.clearHistory();
+//        assertTrue(peli.getTurnHistory().toString().equals(""));
+//    }
 
     @Test
     public void enKorotusTest() {

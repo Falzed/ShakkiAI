@@ -1,5 +1,7 @@
 package ui;
 
+import components.Nappula;
+import AI.*;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
@@ -30,12 +32,12 @@ import javax.xml.parsers.ParserConfigurationException;
  *
  * @author Oskari Kulmala
  */
-public class UI extends javax.swing.JFrame {
+public class AIvsAIUI extends javax.swing.JFrame {
 
     private JPanel[][] panels;
     private JLabel[][] labels;
 
-    public UI(Game peli) {
+    public AIvsAIUI(Game peli) {
         initComponents(peli);
     }
 
@@ -137,7 +139,7 @@ public class UI extends javax.swing.JFrame {
                 }
             }
         });
-        HiiriKuuntelija hiiriKuuntelija = new HiiriKuuntelija(panels[0].length, panels.length, panels, this);
+        HiiriKuuntelijaAI hiiriKuuntelija = new HiiriKuuntelijaAI(panels[0].length, panels.length, panels, this);
         for (JPanel[] panelRivi : panels) {
             for (JPanel panel : panelRivi) {
                 panel.addMouseListener(hiiriKuuntelija);
@@ -319,33 +321,34 @@ public class UI extends javax.swing.JFrame {
     }
 
     public void suoritaKomento(String komento) {
-        ParserReturn komentoReturn = peli.suoritaKomento(komento);
-        int[][] startEndPoints = komentoReturn.getCoordinates();
-//                System.out.println(komentoReturn);
-        if (!komentoReturn.getError().isEmpty()) {
-            popUpErrorMessage(komentoReturn.getError());
-        }
-        if (startEndPoints != null) {
-            if (peli.tarkistaKorotus(startEndPoints[1])) {
-                peli.korota(startEndPoints[1], popupKorotus());
-            }
-            historiaKentta.setText(peli.getTurnHistory().toString());
-        }
-
-        komentoKentta.setText("");
-
-        updateUI();
-
-        if (peli.tarkistaMatti()) {
-            popUpErrorMessage(peli.getVuoro() + " on matissa");
-        }
-        if (peli.tarkistaPatti()) {
-            popUpErrorMessage(peli.getVuoro() + " on patissa, tasapeli");
-        }
-        if (komentoReturn.getError().isEmpty()) {
-            int[][] AIKomento = peli.getAI().seuraavaKomento(peli.getLauta(), peli.getEnPassant());
+        int max = Integer.parseInt(komento);
+        for (int i=0; i<max; i++) {
+            Tekoaly valkoinenAI = new Tekoaly(Nappula.Puoli.VALKOINEN);
+            int[][] AIKomento = valkoinenAI.seuraavaKomento(peli.getLauta(), peli.getEnPassant());
             System.out.println("AI komento :" + Arrays.toString(AIKomento[0]) + " to " + Arrays.toString(AIKomento[1]));
             peli.suoritaKomento(AIKomento);
+            updateUI();
+
+            if (peli.tarkistaMatti()) {
+                popUpErrorMessage(peli.getVuoro() + " on matissa");
+            }
+            if (peli.tarkistaPatti()) {
+                popUpErrorMessage(peli.getVuoro() + " on patissa, tasapeli");
+            }
+
+            AIKomento = peli.getAI().seuraavaKomento(peli.getLauta(), peli.getEnPassant());
+            System.out.println("AI komento :" + Arrays.toString(AIKomento[0]) + " to " + Arrays.toString(AIKomento[1]));
+            peli.suoritaKomento(AIKomento);
+            
+//        if (startEndPoints != null) {
+//            if (peli.tarkistaKorotus(startEndPoints[1])) {
+//                peli.korota(startEndPoints[1], popupKorotus());
+//            }
+//            historiaKentta.setText(peli.getTurnHistory().toString());
+//        }
+
+            komentoKentta.setText("");
+
             updateUI();
 
             if (peli.tarkistaMatti()) {

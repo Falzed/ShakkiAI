@@ -77,6 +77,8 @@ public class Liikkuminen {
             Tornitus.tornita(mista, minne, lauta);
             return true;
         }
+//        System.out.println(Arrays.toString(mista)+" to "+Arrays.toString(minne));
+//        System.out.println(lauta.getNappula(mista));
         return siirry(mista, minne, lauta, enPassant);
     }
 
@@ -117,10 +119,10 @@ public class Liikkuminen {
     }
 
     private static boolean siirry(int[] mista, int[] minne, Lauta lauta, int[] enPassant) {
-        if (Arrays.equals(minne, enPassant) && lauta.getNappula(mista).onSotilas()) {
-            SotilasLiikkuminen.enPassant(lauta.getNappula(mista), minne, lauta);
-            return true;
-        }
+//        if (Arrays.equals(minne, enPassant) && lauta.getNappula(mista).onSotilas()) {
+//            SotilasLiikkuminen.enPassant(lauta.getNappula(mista), minne, lauta);
+//            return true;
+//        }
         Nappula nappula = lauta.getNappula(mista);
         if (lauta.getNappula(minne).isEmpty()) {
             LaudanMuutokset.aseta(nappula, minne, lauta);

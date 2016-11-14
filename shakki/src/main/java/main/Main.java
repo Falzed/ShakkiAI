@@ -2,7 +2,7 @@ package main;
 
 import components.Nappula;
 import logic.Game;
-import ui.UI;
+import ui.*;
 import variants.Standard;
 
 public class Main {
@@ -15,13 +15,13 @@ public class Main {
     public static void main(String[] args) {
         Game peli = new Game(new Standard());
         UI ui = new UI(peli);
+//        AIvsAIUI ui = new AIvsAIUI(peli);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 ui.setVisible(true);
                 ui.updateUI();
             }
         });
-        Nappula.Puoli vuoro = Nappula.Puoli.VALKOINEN;
 
     }
 }
